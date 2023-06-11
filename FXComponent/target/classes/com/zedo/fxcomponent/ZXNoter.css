@@ -1,0 +1,385 @@
+
+/*菜单栏 背景透明*/
+
+.menu-bar {
+    -fx-background-color: #00000000;
+}
+
+/*菜单栏 字体颜色*/
+
+.menu-bar .container .menu:openvertically > .label {
+    -fx-text-fill: #ffffff;
+}
+
+/*菜单栏 菜单背景*/
+
+.context-menu {
+    -fx-background-color: #313031ff;
+}
+
+.menu-item > .label {
+    -fx-text-fill: #dddddd;
+}
+
+
+/*按钮基本样式*/
+.button {
+    -fx-background-color: #cdcdcd;
+}
+
+.button:hover {
+    -fx-background-color: #ffffff;
+
+}
+
+
+.buttonStyle1 {
+    -fx-background-color: #333333;
+    -fx-text-fill: #dddddd;
+}
+
+.buttonStyle2:hover {
+    -fx-background-color: #474747;
+
+}
+
+.buttonStyle3 {
+    -fx-background-color: #333333;
+    -fx-text-fill: #dddddd;
+    -fx-background-radius: 4;
+}
+
+.buttonStyle3:hover {
+    -fx-background-color: #474747;
+
+}
+
+.buttonStyle3:pressed {
+    -fx-background-color: #525252;
+
+}
+
+
+/*文本输入框样式*/
+.text-field {
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #00000000;
+}
+
+.text-field:focused {
+    -fx-background-color: #3c3c3c;
+}
+
+
+.TextFieldStyle2 {
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #1D1D1D;
+}
+
+
+.TextFieldStyle1 {
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #252526;
+}
+
+.TextFieldStyle1:focused {
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #252526;
+}
+
+
+/*文本空间输入框样式*/
+
+.text-area {
+    -fx-padding: 0;
+    -fx-cursor: default;
+    -fx-background-color: linear-gradient(to bottom, derive(-fx-text-box-border, -10%), -fx-text-box-border),
+    derive(-fx-base, -1%);
+    -fx-text-fill: #ffffff;
+    -fx-text-box-border: #1D1D1D;
+}
+.text-area:focused {
+
+    -fx-text-box-border: #3c3c3c;
+}
+
+
+.text-area .scroll-pane .viewport .content{
+    -fx-background-color: #1D1D1D;
+}
+
+.text-area:focused .scroll-pane .viewport .content{
+    -fx-background-color: #3c3c3c;
+}
+
+
+.text-area > .scroll-pane {
+    -fx-background-color: null;
+}
+
+.text-area .content {
+
+    -fx-padding: 0.25em 0.583em 0.25em 0.583em;
+    -fx-cursor: text;
+    -fx-background-color:transparent;
+    -fx-background-radius: 0;
+}
+
+
+
+/* .TextFieldStyle3{
+    -fx-text-fill: #ffffff;
+    -fx-background-color:#252526;
+}
+.TextFieldStyle3:focused{
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #252526;
+} */
+
+
+/*全局标签样式*/
+.label {
+    -fx-text-fill: #ffffff;
+}
+
+/*窗口按钮*/
+.windowButton {
+    -fx-background-color: #3c3c3c;
+}
+
+
+.windowButton:hover {
+    -fx-background-color: #474748;
+}
+
+.windowButton:pressed {
+    -fx-background-color: #606060;
+}
+
+.windowCloseButton:hover {
+    -fx-background-color: #e91022ff;
+}
+
+.windowCloseButton:pressed {
+    -fx-background-color: #f00a1d;
+}
+
+
+/* 标签栏容器 */
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: #333333;
+}
+
+.tabPaneStyleTransparent .tab-header-area .tab-header-background {
+    -fx-background-color: transparent;
+}
+
+
+.tabPaneStyleRadius .tab-header-area .tab-header-background {
+    -fx-background-radius: 4;
+}
+
+.tabPaneStyle .tab {
+    -fx-padding: 8;
+    -fx-shape: "M1,1L1,1c0-0.6,0.4-1,1-1H22c0.5,0,1,0.4,1,1V1c0,0.5-0.4,1-1,1H2C1.4,2,1,1.6,1,1z M1,36z";
+}
+
+
+.tab-pane .tab-header-area {
+    -fx-padding: 0;
+    
+}
+
+.tab-pane .tab-header-area .headers-region .tab .tab-container .tab-label {
+    -fx-text-fill: #b1b1b1;
+}
+
+.tabPaneStyle .tab-header-area {
+    -fx-background-radius: 4;
+}
+
+.tabPaneStyleRadius .tab-header-area {
+    -fx-background-radius: 4;
+}
+
+.tab {
+    -fx-padding: 12;
+    -fx-background-color: transparent;
+    -fx-shape: "M1,1L1,1c0-0.6,0.4-1,1-1H22c0.5,0,1,0.4,1,1V1c0,0.5-0.4,1-1,1H2C1.4,2,1,1.6,1,1z M1,36z";
+}
+
+.tab-pane .tab-header-area .control-buttons-tab:hover {
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+}
+
+.tab-pane .tab-header-area .headers-region .tab:selected .tab-container .tab-label {
+    -fx-text-fill: #ffffff;
+}
+
+.tab:selected {
+    -fx-background-color: #ffffff;
+
+}
+
+.tab-pane .tab-header-area .control-buttons-tab .container .tab-down-button .arrow {
+    -fx-background-color: #ffffff;
+}
+
+
+.tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {
+    -fx-border-color: transparent;
+}
+
+
+
+.tab-pane .tab-header-area .headers-region .tab .tab-container .tabPaneTabs {
+    -fx-background-color: #858585;
+    -fx-text-fill: #858585;
+}
+
+.tab-pane .tab-header-area .headers-region .tab:selected .tab-container .tabPaneTabs {
+    -fx-background-color: #ffffff;
+}
+
+.tab-pane .tab-header-area .headers-region .tab:hover .tab-container .tabPaneTabs {
+    -fx-background-color: #ffffff;
+}
+
+
+/* 资源管理 */
+
+.tree-view {
+    -fx-text-fill: #ffffff;
+    -fx-background-color: transparent;
+}
+
+.tree-cell {
+    -fx-text-fill: #dddddd;
+    -fx-background-color: transparent;
+}
+
+.tree-cell > .tree-disclosure-node > .arrow,
+.tree-table-row-cell > .tree-disclosure-node > .arrow {
+    -fx-shape: "M12.172 12L9.343 9.172l1.414-1.415L15 12l-4.243 4.243-1.414-1.415z";
+    -fx-background-color: #b1b1b1;
+    -fx-padding: 4 4 4 4;
+    -fx-effect: null;
+}
+
+.tree-cell:filled {
+    -fx-border-color: #474747;
+    -fx-border-width: 1 0 0 0;
+}
+
+/* 选中 */
+.tree-view:focused > .virtual-flow > .clipped-container > .sheet > .tree-cell:filled:selected {
+    -fx-background-color: #303030;
+}
+
+/* 失去焦点 */
+.tree-cell:filled:selected {
+    -fx-background-color: #2a2a2a;
+}
+
+
+/* 资源管理容器 */
+.titled-pane .content {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.titled-pane .title {
+    -fx-background-color: transparent;
+    -fx-border-color: #474747;
+    -fx-border-width: 1 0 0 0;
+
+}
+
+
+.first-titled-pane .title {
+    -fx-border-width: 0 0 0 0;
+}
+
+.titled-pane .title .text {
+    -fx-fill: #b1b1b1;
+}
+
+
+.titled-pane .title .arrow-button .arrow {
+    -fx-shape: "M12 15l-4.243-4.243 1.415-1.414L12 12.172l2.828-2.829 1.415 1.414z";
+    -fx-background-color: #b1b1b1;
+    -fx-padding: 3 6 4 4;
+    -fx-effect: null;
+}
+
+
+.label .text {
+    -fx-fill: #dddddd;
+}
+
+
+/* 切换按钮 */
+.toggle-button .text {
+    -fx-fill: #dddddd;
+}
+
+.toggle-button {
+    -fx-fill: #dddddd;
+    -fx-background-color: #1D1D1D;
+}
+
+.toggle-button:selected {
+    -fx-background-color: #494949;
+}
+
+/* 列表 */
+
+.list-view {
+    -fx-background-color: #2a2a2b;
+
+}
+
+
+.list-cell {
+    -fx-background-color: transparent;
+}
+
+.list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled {
+    -fx-border-color: #252526;
+    -fx-border-width: 1 0 0 0;
+}
+
+/* 滚动条 */
+.scroll-bar .track {
+    -fx-background-color: #2c2c2c;
+}
+
+.scroll-bar .track-background {
+    -fx-background-color: #363636;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #adadad;
+}
+
+.scroll-bar{
+    -fx-background-color: #363636;
+}
+
+/* 选择框 */
+.choice-box {
+    -fx-background-color: #1D1D1D;
+    -fx-text-fill: #dddddd;
+}
+
+.choice-box:focused {
+    -fx-background-color: #3C3C3C;
+}
+
+.choice-box .label {
+    -fx-effect: null;
+}
+
+
+

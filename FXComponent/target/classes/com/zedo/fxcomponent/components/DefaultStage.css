@@ -1,0 +1,133 @@
+/*根容器*/
+.window-root {
+    -fx-effect: dropShadow(three-pass-box, rgb(0, 0, 0, 0.3), 10, 0, 0, 0);
+    /*-fx-background-color: rgb(30, 30, 30);*/
+    -fx-background-color: transparent;
+    -fx-background-radius: 9.5;
+    -fx-border-color: rgb(70, 70, 70);
+    -fx-border-style: SOLID;
+    -fx-border-width: 1.2;
+    -fx-border-radius: 9.5;
+    -fx-border-insets: 0;
+}
+
+.window-layout .window-root{
+    -fx-border-radius: 0 0 0 0;
+    -fx-effect: null;
+}
+
+.window-body {
+    -fx-background-color: rgb(30, 30, 30);
+    -fx-background-radius: 0 0 9.5 9.5;
+}
+
+
+.window-focused .window-root {
+    -fx-effect: dropShadow(three-pass-box, rgb(0, 0, 0, 0.3), 15, 0, 0, 0);
+}
+
+/*标题栏*/
+.window-titleBar {
+    -fx-background-color: rgb(50, 50, 51);
+    -fx-background-radius: 9.5 9.5 0 0;
+    -fx-background-insets: -0.4 0 0 -0.4;
+}
+
+.window-focused .window-titleBar {
+    -fx-background-color: rgb(60, 60, 60);
+}
+
+/*关闭按钮*/
+.window-button-close {
+    -fx-text-fill: rgb(177, 177, 177);
+    -fx-border-radius: 0 9.5 0 0;
+    -fx-background-radius: 0 9.5 0 0;
+    -fx-background-color: transparent;
+    -fx-background-insets: 0 0 0 0;
+    -fx-cursor: default;
+}
+
+
+.window-button-close:hover {
+    -fx-background-color: rgb(232, 16, 35);
+    -fx-border-color: rgb(165, 45, 50);
+    -fx-border-style: SOLID;
+    -fx-border-width: 1 1 0 0;
+    -fx-background-insets: -1 -1 0 0;
+    -fx-border-insets: -1 -1 0 0;
+}
+
+.window-button-close:pressed {
+    -fx-background-color: rgb(165, 45, 50);
+    -fx-border-color: rgb(232, 16, 35);
+}
+
+
+/*布局处理*/
+.window-layout .window-button-close, .window-layout .window-titleBar, .window-layout .window-body {
+    -fx-background-radius: 0 0 0 0;
+    -fx-border-radius: 0 0 0 0;
+}
+
+
+    /*最大化按钮*/
+.window-button-maximize {
+    -fx-text-fill: rgb(177, 177, 177);
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-cursor: default;
+}
+
+
+.window-button-maximize:hover {
+    -fx-background-color: rgb(86, 86, 86);
+    -fx-border-color: rgb(111, 111, 111);
+    -fx-border-style: SOLID;
+    -fx-border-width: 1 0 0 0;
+    -fx-background-insets: -1 0 0 0;
+    -fx-border-insets: -1 0 0 0;
+}
+
+.window-button-maximize:pressed {
+    -fx-background-color: rgb(111, 111, 111);
+    -fx-border-color: rgb(86, 86, 86);
+}
+
+/*最小化按钮*/
+.window-button-minimize {
+    -fx-text-fill: rgb(177, 177, 177);
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-cursor: default;
+}
+
+
+.window-button-minimize:hover {
+    -fx-background-color: rgb(86, 86, 86);
+    -fx-border-color: rgb(111, 111, 111);
+    -fx-border-style: SOLID;
+    -fx-border-width: 1 0 0 0;
+    -fx-background-insets: -1 0 0 0;
+    -fx-border-insets: -1 0 0 0;
+}
+
+.window-button-minimize:pressed {
+    -fx-background-color: rgb(111, 111, 111);
+    -fx-border-color: rgb(86, 86, 86);
+}
+
+.window-layout-background {
+    -fx-background-color: rgb(0, 0, 0, 0.3);
+    -fx-effect: dropShadow(gaussian, rgb(0, 0, 0, 0.3), 10, 0, 0, 0);
+    -fx-background-radius: 9.5;
+    -fx-border-color: rgb(0, 0, 0, 0.3);
+    -fx-border-style: SOLID;
+    -fx-border-width: 1.2;
+    -fx-border-radius: 9.5;
+}
+
+

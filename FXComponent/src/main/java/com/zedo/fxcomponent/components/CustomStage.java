@@ -1,6 +1,7 @@
 package com.zedo.fxcomponent.components;
 
 import com.zedo.fxcomponent.utils.FXUtil;
+import javafx.animation.AnimationTimer;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.beans.value.ChangeListener;
@@ -284,12 +285,24 @@ public class CustomStage {
         layoutStage.setResizable(false);
 
 
+        final int[] a = {0};
+        // 在每个更新周期中进行绘制
+        AnimationTimer timer = new AnimationTimer() {
+            @Override
+            public void handle(long now) {
+
+
+            }
+        };
+
+        timer.start();
+
+
         layoutTimeline.getKeyFrames().add(new KeyFrame(Duration.millis(1000 / UPDATE_FPS), event1 -> {
 
             if (layoutShowSpeed < 1)
                 layoutShowSpeed += 0.01;
             if (executeLayout) {
-
 
                 double stageX = getX();
                 double stageY = getY();
@@ -300,7 +313,6 @@ public class CustomStage {
                 if (!showLayout && layoutAutoXY) {
                     layoutX = mouseScreenX - dragMoveXProportion * stageW;
                     layoutY = mouseScreenY - 8;
-
 
                     originalX = stageX;
                     originalY = stageY;
@@ -317,9 +329,6 @@ public class CustomStage {
                 double calculateW = mathFloorCeil(layoutW - stageW, LAYOUT_SPEED + layoutShowSpeed);
                 double calculateH = mathFloorCeil(layoutH - stageH, LAYOUT_SPEED + layoutShowSpeed);
 
-                if (isMinimize) {
-                    //layoutShowSpeed
-                }
 
                 if (Math.abs(calculateX) < 2 && Math.abs(calculateY) < 2 && Math.abs(calculateW) < 2 && Math.abs(calculateH) < 2) {
 
@@ -385,14 +394,6 @@ public class CustomStage {
                         }
                     }
 
-
-               /* if (calculateX == 0 && calculateY == 0 && calculateW == 0 && calculateH == 0) {
-                    if (!executeLayout) {
-                        layoutTimeline.stop();
-                    }
-                    if (!showLayout)
-                        layoutStage.close();
-                }*/
                     layoutStage.setX(stageX + calculateX);
                     layoutStage.setY(stageY + calculateY);
                     layoutStage.setWidth(stageW + calculateW);
@@ -408,30 +409,6 @@ public class CustomStage {
         //鼠标点击
         node.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
             if (event.getClickCount() == 2) {
-                /*if (isLayoutStyle()) {
-                    layoutX = layoutOriginalX;
-                    layoutY = layoutOriginalY;
-                    layoutW = layoutOriginalW;
-                    layoutH = layoutOriginalH;
-                    setLayoutStyle(false);
-                } else {
-                    layoutOriginalX = getX();
-                    layoutOriginalY = getY();
-                    layoutOriginalW = getWidth();
-                    layoutOriginalH = getHeight();
-                    Rectangle2D r = FXUtil.getMouseScreen(event.getScreenX(), event.getScreenY()).getVisualBounds();
-                    layoutX = r.getMinX();
-                    layoutY = r.getMinY();
-                    layoutW = r.getWidth();
-                    layoutH = r.getHeight();
-                    setLayoutStyle(true);
-                }
-                layoutAutoXY = false;
-                executeLayout = true;
-                layoutShowSpeed = 0;
-                layoutTimeline.play();*/
-
-
                 setMaximize(!isMaximize(), null, false);
             }
         });
@@ -501,12 +478,6 @@ public class CustomStage {
                         layoutW = w;
                         layoutH = h;
 
-                        /*
-                        originalX = getX();
-                        originalY = getX();
-                        originalWidth = getWidth();
-                        originalHeight = getHeight();*/
-
                         if (!showLayout && !isLayoutStyle()) {
                             layoutOriginalX = getX();
                             layoutOriginalY = getY();
@@ -518,10 +489,6 @@ public class CustomStage {
                         layoutTimeline.play();
 
 
-
-                        /*if (sideThread == null) {//如果不存在则创建线程
-                            sideThread = new BetterStage.TitleBar.SideThread(FXUtil.getStageRect(stage));
-                        }*/
 
                     } else {
 
@@ -550,6 +517,9 @@ public class CustomStage {
                             layoutW = getWidth();
                             layoutH = getHeight();
                         }
+
+
+
 
 
                         /*if (sideThread != null) {//复位
@@ -706,10 +676,13 @@ public class CustomStage {
     private void setLayoutStyle(boolean isLayout) {
         ObservableList<String> styleClass = rootContainer.getStyleClass();
         if (isLayout != styleClass.contains("window-layout"))
-            if (isLayout)
+            if (isLayout) {
+                rootContainer.setPadding(new Insets(0));
                 styleClass.add("window-layout");
-            else
+            } else{
+                rootContainer.setPadding(new Insets(rootContainerPadding));
                 styleClass.remove("window-layout");
+            }
     }
 
     private boolean isLayoutStyle() {
